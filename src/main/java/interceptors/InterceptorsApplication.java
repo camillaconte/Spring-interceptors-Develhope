@@ -9,5 +9,4 @@ public class InterceptorsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(InterceptorsApplication.class, args);
 	}
-
 }

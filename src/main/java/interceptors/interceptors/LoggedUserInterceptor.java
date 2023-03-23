@@ -34,7 +34,7 @@ public class LoggedUserInterceptor implements HandlerInterceptor {
     ));
 
 
-    /**
+    /*
      * Vediamo cosa farà questo metodo:
      * - abbiamo preso uno userId
      * - l'abbiamo TRASFORMATO IN UN UTENTE
@@ -53,7 +53,7 @@ public class LoggedUserInterceptor implements HandlerInterceptor {
             throws Exception {
         String userIdString = request.getHeader("userId");
         if(userIdString == null) {
-            return true;
+            return false;
         }
         long userId = Long.parseLong(userIdString);
         Optional<User> user = usersList.stream().filter(singleUser -> {

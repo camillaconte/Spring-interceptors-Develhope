@@ -21,7 +21,7 @@ public class ProfileController {
      */
     @GetMapping
     public User get(HttpServletRequest request){
-        User user = (User) request.getAttribute("user");
+        User user = (User) request.getAttribute("LoggedUserInterceptor-user");
         return user;
     }
 }
