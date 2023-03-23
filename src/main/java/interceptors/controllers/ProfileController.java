@@ -21,6 +21,9 @@ public class ProfileController {
      */
     @GetMapping
     public User get(HttpServletRequest request){
+        //N.B. il name dell'attribute deve essere lo stesso identico riportato nell'Interceptor
+        //quindi in questo caso non è solo "user" (come avevo scritto inizialmente)
+        //ma è "LoggedUserInterceptor-user" !!!
         User user = (User) request.getAttribute("LoggedUserInterceptor-user");
         return user;
     }
