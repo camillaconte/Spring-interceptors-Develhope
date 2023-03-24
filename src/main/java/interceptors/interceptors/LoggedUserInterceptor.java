@@ -70,8 +70,10 @@ public class LoggedUserInterceptor implements HandlerInterceptor {
             //n.b. inserisci prima della chiave "user" anche il nome del corrispondente interceptor
             //perché se avessi più interceptor e chiavi con lo stesso nome potrei fare confusione!
             request.setAttribute("LoggedUserInterceptor-user", user.get());
+            return true;
         }
-        return true;
+        response.setStatus(404);
+        return false;
     }
 
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
